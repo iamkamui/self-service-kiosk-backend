@@ -47,6 +47,7 @@ There are a project using to improve our backend skills and project management
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<<<<<<< HEAD
 ### Product Backlog
 <<<<<<< HEAD
 ## Backlog
@@ -152,6 +153,8 @@ There are a project using to improve our backend skills and project management
 </table>
 
 >>>>>>> 9c7106c (:books: docs: Adding product backlog to readme.md)
+=======
+>>>>>>> 79df2a6 (Revert ":books: docs: Adding product backlog to readme.md")
 
 ### Builting With
 

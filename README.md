@@ -23,12 +23,6 @@
 
 
 <!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/iamkamui/self-service-kiosk-backend">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
 <h3 align="center">Self Service Kiosk</h3>
 
   <p align="center">
@@ -49,8 +43,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 There are a project using to improve our backend skills and project management
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -58,7 +50,8 @@ There are a project using to improve our backend skills and project management
 
 ### Builting With
 
-* [![DRF][Django REST framework]][DRF-url] [![Python][Python.py]][Python-url] [![Django][Django]][Django-url] 
+[![DRF][Django REST framework]][DRF-url] [![Python][Python.py]][Python-url] [![Django][Django]][Django-url]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

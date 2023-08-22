@@ -48,22 +48,37 @@ There are a project using to improve our backend skills and project management
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Product Backlog
+<<<<<<< HEAD
 ## Backlog
 
 <table>
+=======
+
+<table>
+<thead>
+>>>>>>> 9c7106c (:books: docs: Adding product backlog to readme.md)
   <tr>
     <th>Tema</th>
     <th>Eu, Como</th>
     <th>Desejo</th>
     <th>Para que eu possa</th>
   </tr>
+<<<<<<< HEAD
   <tr>
     <td rowspan="6">Administrativo</td>
     <td>Gerente</td>
+=======
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="9">Administrativo</td>
+    <td rowspan="6">Gerente</td>
+>>>>>>> 9c7106c (:books: docs: Adding product backlog to readme.md)
     <td>Iniciar o expediente</td>
     <td>Receber pedidos</td>
   </tr>
   <tr>
+<<<<<<< HEAD
     <td>Gerente</td>
     <td>Finalizar o expediente</td>
     <td>Visualizar o faturamento do dia</td>
@@ -71,10 +86,29 @@ There are a project using to improve our backend skills and project management
   <!-- ... outras linhas ... -->
   <tr>
     <td>Gerente</td>
+=======
+    <td>Finalizar o expediente</td>
+    <td>Visualizar o faturamento do dia</td>
+  </tr>
+  <tr>
+    <td>Visualizar quantidade de pedidos realizados</td>
+    <td>Tomar melhored decisões</td>
+  </tr>
+  <tr>
+    <td>Visualizar quantidade de pedidos concluidos</td>
+    <td>Analisar desempenho da equipe</td>
+  </tr>
+  <tr>
+    <td>Visualizar quantidade de pedidos cancelados</td>
+    <td>Identificar problemas de atendimento</td>
+  </tr>
+  <tr>
+>>>>>>> 9c7106c (:books: docs: Adding product backlog to readme.md)
     <td>Criar código de promoção</td>
     <td>Aumentar quantidade de pedidos</td>
   </tr>
   <tr>
+<<<<<<< HEAD
     <td rowspan="3">Atendimento</td>
     <td>Consumidor</td>
     <td>Iniciar um pedido</td>
@@ -87,6 +121,37 @@ There are a project using to improve our backend skills and project management
     <td>Notificar quando o consumidor para pegar o pedido</td>
   </tr>
 </table>
+=======
+    <td rowspan="3">Consumidor</td>
+    <td>Iniciar um pedido</td>
+    <td>Selecionar produtos para o pedido</td>
+  </tr>
+  <tr>
+    <td>Adicionar produto ao carrinho</td>
+    <td>Montar lista de compras</td>
+  </tr>
+  <tr>
+    <td>Finalizar o pedido</td>
+    <td>Efetuar o pagamento e aguardar o preparo</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Atendimento</td>
+    <td rowspan="3">Cozinheiro</td>
+    <td>Visualizar fila de pedidos</td>
+    <td>Selecionar o pedido a ser preparado</td>
+  </tr>
+  <tr>
+    <td>Selecionar o pedido para preparo</td>
+    <td>Iniciar preparação do pedido</td>
+  </tr>
+  <tr>
+    <td>Avisar quando o pedido está pronto</td>
+    <td>Notificar quando o consumidor para pegar o pedido</td>
+  </tr>
+</tbody>
+</table>
+
+>>>>>>> 9c7106c (:books: docs: Adding product backlog to readme.md)
 
 ### Builting With
 

@@ -47,6 +47,46 @@ There are a project using to improve our backend skills and project management
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Product Backlog
+## Backlog
+
+<table>
+  <tr>
+    <th>Tema</th>
+    <th>Eu, Como</th>
+    <th>Desejo</th>
+    <th>Para que eu possa</th>
+  </tr>
+  <tr>
+    <td rowspan="6">Administrativo</td>
+    <td>Gerente</td>
+    <td>Iniciar o expediente</td>
+    <td>Receber pedidos</td>
+  </tr>
+  <tr>
+    <td>Gerente</td>
+    <td>Finalizar o expediente</td>
+    <td>Visualizar o faturamento do dia</td>
+  </tr>
+  <!-- ... outras linhas ... -->
+  <tr>
+    <td>Gerente</td>
+    <td>Criar código de promoção</td>
+    <td>Aumentar quantidade de pedidos</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Atendimento</td>
+    <td>Consumidor</td>
+    <td>Iniciar um pedido</td>
+    <td>Selecionar os produtos para o pedido</td>
+  </tr>
+  <!-- ... outras linhas ... -->
+  <tr>
+    <td>Cozinheiro</td>
+    <td>Avisar quando o pedido está pronto</td>
+    <td>Notificar quando o consumidor para pegar o pedido</td>
+  </tr>
+</table>
 
 ### Builting With
 

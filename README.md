@@ -47,62 +47,25 @@ There are a project using to improve our backend skills and project management
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### Product Backlog
-<<<<<<< HEAD
-## Backlog
-
-<table>
-=======
 
 <table>
 <thead>
->>>>>>> 9c7106c (:books: docs: Adding product backlog to readme.md)
-=======
-### Product Backlog
-<table>
-<thead>
->>>>>>> 2764c71 (:books: docs: Updating readme)
   <tr>
     <th>Tema</th>
     <th>Eu, Como</th>
     <th>Desejo</th>
     <th>Para que eu possa</th>
   </tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <tr>
-    <td rowspan="6">Administrativo</td>
-    <td>Gerente</td>
-=======
-=======
->>>>>>> 2764c71 (:books: docs: Updating readme)
 </thead>
 <tbody>
   <tr>
     <td rowspan="9">Administrativo</td>
     <td rowspan="6">Gerente</td>
-<<<<<<< HEAD
->>>>>>> 9c7106c (:books: docs: Adding product backlog to readme.md)
-=======
->>>>>>> 2764c71 (:books: docs: Updating readme)
     <td>Iniciar o expediente</td>
     <td>Receber pedidos</td>
   </tr>
   <tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <td>Gerente</td>
-    <td>Finalizar o expediente</td>
-    <td>Visualizar o faturamento do dia</td>
-  </tr>
-  <!-- ... outras linhas ... -->
-  <tr>
-    <td>Gerente</td>
-=======
-=======
->>>>>>> 2764c71 (:books: docs: Updating readme)
     <td>Finalizar o expediente</td>
     <td>Visualizar o faturamento do dia</td>
   </tr>
@@ -119,31 +82,10 @@ There are a project using to improve our backend skills and project management
     <td>Identificar problemas de atendimento</td>
   </tr>
   <tr>
-<<<<<<< HEAD
->>>>>>> 9c7106c (:books: docs: Adding product backlog to readme.md)
-=======
->>>>>>> 2764c71 (:books: docs: Updating readme)
     <td>Criar código de promoção</td>
     <td>Aumentar quantidade de pedidos</td>
   </tr>
   <tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <td rowspan="3">Atendimento</td>
-    <td>Consumidor</td>
-    <td>Iniciar um pedido</td>
-    <td>Selecionar os produtos para o pedido</td>
-  </tr>
-  <!-- ... outras linhas ... -->
-  <tr>
-    <td>Cozinheiro</td>
-    <td>Avisar quando o pedido está pronto</td>
-    <td>Notificar quando o consumidor para pegar o pedido</td>
-  </tr>
-</table>
-=======
-=======
->>>>>>> 2764c71 (:books: docs: Updating readme)
     <td rowspan="3">Consumidor</td>
     <td>Iniciar um pedido</td>
     <td>Selecionar produtos para o pedido</td>
@@ -172,13 +114,6 @@ There are a project using to improve our backend skills and project management
   </tr>
 </tbody>
 </table>
-<<<<<<< HEAD
-
->>>>>>> 9c7106c (:books: docs: Adding product backlog to readme.md)
-=======
->>>>>>> 79df2a6 (Revert ":books: docs: Adding product backlog to readme.md")
-=======
->>>>>>> 2764c71 (:books: docs: Updating readme)
 
 ### Builting With
 

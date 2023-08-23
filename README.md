@@ -47,6 +47,10 @@ There are a project using to improve our backend skills and project management
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Product Use Case
+
+![product use case][product-use-case]
+
 ### Product Backlog
 
 <table>
@@ -148,3 +152,7 @@ Project Link: [https://github.com/iamkamui/self-service-kiosk-backend](https://g
 
 [Django]: https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white&labelColor=gray
 [Django-url]: https://www.djangoproject.com/
+
+<!-- IMAGES -->
+
+[product-use-case]: /_models/_usecasemodel/49680c68ac6df69d4829bc9950915340.svg

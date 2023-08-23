@@ -155,4 +155,4 @@ Project Link: [https://github.com/iamkamui/self-service-kiosk-backend](https://g
 
 <!-- IMAGES -->
 
-[product-use-case]: /_models/_usecasemodel/49680c68ac6df69d4829bc9950915340.svg
+[product-use-case]: /_models/_usecasemodel/usecase.svg

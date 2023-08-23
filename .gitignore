@@ -162,6 +162,7 @@ cython_debug/
 # Excel/Libreoffice files
 *.ods
 *.csv
+_csv/*
 
 # Modeling
 *.mdj

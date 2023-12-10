@@ -1,5 +1,5 @@
 services:
-  db:
+  postgres:
     image: postgres
     env_file:
       - .env
@@ -15,4 +15,4 @@ services:
     env_file:
       - .env
     depends_on:
-      - db
+      - postgres

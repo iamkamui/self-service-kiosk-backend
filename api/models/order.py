@@ -1,7 +1,8 @@
 from django.db import models
+
+from . import Cart
+from . import Product
 from core.models import DefaultBaseModel
-from .product import Product
-from .cart import Cart
 
 
 class Order(DefaultBaseModel):

@@ -1,6 +1,6 @@
 from django.db import models
 
-from api.models import DefaultBaseModel
+from core.models import DefaultBaseModel
 
 
 class Category(DefaultBaseModel):

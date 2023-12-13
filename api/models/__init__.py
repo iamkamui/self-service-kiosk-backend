@@ -8,7 +8,6 @@ __all__ = [
     "SubCategory",
 ]
 
-from core.models import DefaultBaseModel  # noqa
 from .product import Product, Category, SubCategory
 from .cart import Cart, CartItem
 from .order import Order, OrderItem

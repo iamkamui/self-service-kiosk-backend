@@ -1,5 +1,6 @@
 from django.db import models
-from .product import Product
+
+from . import Product
 from core.models import DefaultBaseModel
 
 

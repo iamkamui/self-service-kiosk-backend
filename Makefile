@@ -1,6 +1,15 @@
+.PHONY: start
+start: migrate
+	docker compose up -d
+
+.PHONY: migrate
 migrate:
-	python manage.py migrate $(app)
+	docker compose run --rm django python manage.py migrate $(app)
+
+.PHONY: migrations
 migrations:
-	python manage.py makemigrations $(app)
-show_urls:
-	python manage.py show_urls
+	docker compose run --rm django python manage.py makemigrations $(app)
+
+.PHONY: show_urls
+show_urls: up
+	docker compose run --rm django python manage.py show_urls

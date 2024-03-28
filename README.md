@@ -8,7 +8,7 @@ A lot of big fast food restaurant which have a in-person establishment has in yo
 Create a fastfood restaurant REST API that allows mid or lower restaurant to have your own self service toten.
 
 
-## Users Requirements
+## Users Requirements Gathering (Stories)
 
 ### Consumer
 ##### In Person
@@ -22,4 +22,12 @@ As a manager i want to have a cleary understand of what is the most popular prod
 
 ### Chef
 As a chef i want to see in the kitchen screen the queue of orders with the details of product orders to be prepare ordered by time from latest to newer, so that i can select which one to prepare first and select when ready.
+
+## Users Requirements Gathering (Functional)
+
+- Place Order:  the system must support `anonymous` (only in-person establishment) or `authenticated` (in-person or mobile app) placed order.
+
+- User Authentication: the system must support JWT authentication.
+
+- APIs: the system has to provide RESTful API's for integration.
 <p align="right"><a href="#readme-top">back to top</a></p>

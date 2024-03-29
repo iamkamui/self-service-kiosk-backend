@@ -44,7 +44,7 @@ class Profile(BaseModel):
 
 
 class Address(BaseModel):
-    profile = models.ForeignKey(Profile, on_delete=models.DO_NOTHING)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     country = models.CharField("country", blank=False, null=False, max_length=150)
     zip_code = models.CharField("zip_code", blank=False, null=False, max_length=150)
     state = models.CharField("state", blank=False, null=False, max_length=150)

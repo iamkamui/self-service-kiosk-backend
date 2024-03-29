@@ -14,7 +14,8 @@ repos:
     hooks:
     -   id: end-of-file-fixer
     -   id: trailing-whitespace
-        exclude: ^migrations/
+        files: \.py$
+        exclude: ^migrations/.*\.py$
   - repo: https://github.com/pycqa/isort
     rev: 5.13.2
     hooks:

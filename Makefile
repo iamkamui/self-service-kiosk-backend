@@ -1,6 +1,7 @@
 .PHONY: start
-start: migrate
+start:
 	docker compose up -d
+	make migrate
 
 .PHONY: migrate
 migrate:
@@ -11,5 +12,8 @@ migrations:
 	docker compose run --rm django python manage.py makemigrations $(app)
 
 .PHONY: show_urls
-show_urls: up
+show_urls:
 	docker compose run --rm django python manage.py show_urls
+
+superuser:
+	docker compose run --rm django python manage.py createsuperuser

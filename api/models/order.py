@@ -1,6 +1,7 @@
 from django.db import models
 
 from api.models.product import Product
+from api.utils import choices
 from core.models import BaseModel, User
 
 
@@ -21,6 +22,12 @@ class Order(BaseModel):
         OrderProducts, verbose_name="order products", on_delete=models.CASCADE
     )
     number = models.BigIntegerField("order number")
+    status = models.CharField(
+        "order status",
+        max_length=20,
+        choices=choices.OrderStatusChoices,
+        default=choices.OrderStatusChoices.PREPARING,
+    )
 
     @property
     def total_price(self):

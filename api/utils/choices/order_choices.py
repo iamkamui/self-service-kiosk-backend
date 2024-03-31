@@ -6,3 +6,9 @@ class OrderStatusChoices(models.TextChoices):
     QUEUE = "ON QUEUE", "On queue"
     PREPARING = "PREPARING", "Preparing"
     READY = "READY", "Ready"
+
+
+class OrderConsumptionChoices(models.TextChoices):
+    TAKE_HOME = "TAKE HOME", "Take home"
+    EAT_IN = "EAT IN", "Eat in"
+    DELIVERY = "DELIVERY", "Delivery"

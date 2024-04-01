@@ -11,18 +11,27 @@ class OrderProductsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = OrderProducts
-        fields = ["products"]
+        fields = ["id", "products"]
 
 
 class OrderSerializer(serializers.ModelSerializer):
-    products = OrderProductsSerializer()
+    products = OrderProductsSerializer(required=False)
+    number = serializers.SerializerMethodField("get_order_number")
     consumption = serializers.ChoiceField(choices=choices.OrderConsumptionChoices)
 
     class Meta:
         model = Order
         fields = "__all__"
 
+    def get_order_number(self, obj: Order):
+        return obj.number
+
     def create(self, validated_data: dict) -> Order:
-        products_data = validated_data.pop("products")
-        order_products = OrderProducts.objects.create(**products_data)
-        return Order.objects.create(products=order_products, **validated_data)
+        order_products = OrderProducts.objects.create()
+        try:
+            order = Order.objects.create(products=order_products, **validated_data)
+        except TypeError as error:
+            order_products.delete()
+            raise serializers.ValidationError(str(error))
+
+        return order

@@ -1,0 +1,19 @@
+import ipdb  # noqa
+
+from api.utils.choices import OrderConsumptionChoices
+from core.tests import BaseTestAPI
+
+
+class TestOrderAPI(BaseTestAPI):
+    def test_create_order_with_anonymous_user(self):
+        data = {"consumption": OrderConsumptionChoices.TAKE_HOME}
+        response = self.client.post(self.start_order_endpoint, data=data, format="json")
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.json()["products"]["products"], [])
+
+    def test_create_order_with_authenticated_user(self):
+        data = {"consumption": OrderConsumptionChoices.EAT_IN}
+        response = self.client.post(self.start_order_endpoint, data=data, format="json")
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.json()["products"]["products"], [])
+        self.assertEqual(response.json()["user"], self.user)

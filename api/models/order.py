@@ -29,7 +29,7 @@ class Order(BaseModel):
         "order status",
         max_length=20,
         choices=choices.OrderStatusChoices,
-        default=choices.OrderStatusChoices.PREPARING,
+        default=choices.OrderStatusChoices.ORDERING,
     )
     consumption = models.CharField(
         "consumption option",
@@ -56,7 +56,7 @@ class Order(BaseModel):
             )
 
             if last_daily_order and self.number is None:
-                self.number = last_daily_order + 1
+                self.number = last_daily_order.number + 1
             else:
                 self.number = 1
 

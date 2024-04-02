@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from api.models import Order, OrderProducts, Product
 from api.utils import choices
+from core.models import User
 
 
 class OrderProductsSerializer(serializers.ModelSerializer):
@@ -15,6 +16,9 @@ class OrderProductsSerializer(serializers.ModelSerializer):
 
 
 class OrderSerializer(serializers.ModelSerializer):
+    user = serializers.PrimaryKeyRelatedField(
+        queryset=User.objects.all(), required=False
+    )
     products = OrderProductsSerializer(required=False)
     number = serializers.SerializerMethodField("get_order_number")
     consumption = serializers.ChoiceField(choices=choices.OrderConsumptionChoices)

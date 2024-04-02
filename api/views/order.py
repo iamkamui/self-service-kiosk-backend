@@ -1,3 +1,4 @@
+from django.contrib.auth.models import AnonymousUser
 from rest_framework import response, status, viewsets
 from rest_framework.decorators import action
 
@@ -18,6 +19,10 @@ class OrderViewSet(viewsets.GenericViewSet):
 
     @action(methods=["post", "get"], detail=False, url_name="start", url_path="start")
     def start_order(self, request, format=["JSON"]):
+
+        if not isinstance(request.user, AnonymousUser):
+            request.data["user"] = request.user.id
+
         serializer = self.get_serializer(data=request.data)
 
         if not serializer.is_valid():

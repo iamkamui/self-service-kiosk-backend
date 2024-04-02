@@ -10,10 +10,14 @@ class TestOrderAPI(BaseTestAPI):
         response = self.client.post(self.start_order_endpoint, data=data, format="json")
         self.assertEqual(response.status_code, 201)
         self.assertEqual(response.json()["products"]["products"], [])
+        self.assertEqual(response.json()["user"], None)
 
     def test_create_order_with_authenticated_user(self):
+        headers = self.get_authentication_header()
         data = {"consumption": OrderConsumptionChoices.EAT_IN}
-        response = self.client.post(self.start_order_endpoint, data=data, format="json")
+        response = self.client.post(
+            self.start_order_endpoint, data=data, headers=headers, format="json"
+        )
         self.assertEqual(response.status_code, 201)
         self.assertEqual(response.json()["products"]["products"], [])
-        self.assertEqual(response.json()["user"], self.user)
+        self.assertEqual(response.json()["user"], self.user.id)

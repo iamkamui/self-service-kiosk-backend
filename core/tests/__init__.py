@@ -11,7 +11,8 @@ class BaseTestAPI(APITestCase):
 
     @classmethod
     def setUpTestData(cls) -> None:
-        cls.start_order_endpoint = reverse("api:order-start")
+        cls.start_order_endpoint = reverse("api:orders-start")
+        cls.create_or_list_products_endpoint = reverse("api:products-list")
         cls.user = cls.create_test_user()
 
     @classmethod

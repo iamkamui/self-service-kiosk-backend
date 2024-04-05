@@ -1,3 +1,3 @@
-from api.utils.choices.order_status import OrderStatusChoices
+from api.utils.choices.order_choices import OrderConsumptionChoices, OrderStatusChoices
 
-__all__ = ["OrderStatusChoices"]
+__all__ = ["OrderStatusChoices", "OrderConsumptionChoices"]

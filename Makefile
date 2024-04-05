@@ -17,3 +17,7 @@ show_urls:
 
 superuser:
 	docker compose run --rm django python manage.py createsuperuser
+
+.PHONY: test
+test:
+	docker compose run --rm django python manage.py test $(path) --keepdb

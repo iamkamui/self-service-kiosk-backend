@@ -9,3 +9,4 @@ django-phonenumber-field[phonenumbers]==7.3.0
 djangorestframework-simplejwt==5.3.1
 ipdb==0.13.
 debugpy==1.8.1
+redis[hiredis]==5.0.3

@@ -11,9 +11,21 @@ services:
       - .env
     depends_on:
       - postgres
+      - redis
   postgres:
     image: postgres:alpine3.19
+    volumes:
+      - dbdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     env_file:
       - .env
+  redis:
+    image: redis:7.2.3-alpine3.18
+    ports:
+      - "6379:6379"
+    env_file:
+      - .env
+
+volumes:
+  dbdata: null

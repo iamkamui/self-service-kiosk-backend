@@ -9,3 +9,6 @@ class Product(BaseModel):
     brand = models.CharField("product brand", max_length=100)
     category = models.ManyToManyField(SubCategory, verbose_name="categories")
     price = models.DecimalField("product price", max_digits=10, decimal_places=2)
+
+    def __str__(self) -> str:
+        return f"{self.name} ({self.brand})"

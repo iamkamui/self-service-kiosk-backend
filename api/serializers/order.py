@@ -1,4 +1,4 @@
-from rest_framework import serializers
+from rest_framework import exceptions, serializers
 
 from api.models import Order, OrderProducts, Product
 from api.utils import choices
@@ -36,6 +36,6 @@ class OrderSerializer(serializers.ModelSerializer):
             order = Order.objects.create(products=order_products, **validated_data)
         except TypeError as error:
             order_products.delete()
-            raise serializers.ValidationError(str(error))
+            raise exceptions.ValidationError(str(error))
 
         return order

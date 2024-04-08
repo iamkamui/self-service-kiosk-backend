@@ -10,9 +10,13 @@ urlpatterns = list()
 router.register(
     r"{0}".format(views.OrderViewSet.CustomMeta.base_url),
     views.OrderViewSet,
-    basename="order",
+    basename="orders",
 )
-
+router.register(
+    r"{0}".format(views.ProductViewSet.CustomMeta.base_url),
+    views.ProductViewSet,
+    basename="products",
+)
 core_urlpatterns = [
     path("", include((router.urls, "api"))),
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),

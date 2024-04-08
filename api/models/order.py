@@ -39,6 +39,8 @@ class Order(BaseModel):
     )
 
     class Meta:
+        verbose_name = "order"
+        verbose_name_plural = "orders"
         unique_together = ["number", "created_at"]
         ordering = ["-created_at"]
 

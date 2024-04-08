@@ -1,15 +1,18 @@
 from django.contrib.auth.models import AnonymousUser
-from rest_framework import response, status, viewsets
+from rest_framework import mixins, permissions, response, status, viewsets
 from rest_framework.decorators import action
 
+from api.filters import IsOwnerOrAdminFilterBackend
 from api.models import Order
-from api.permissions import IsOwnerOrAdmin
 from api.serializers import OrderSerializer
 
 
-class OrderViewSet(viewsets.GenericViewSet):
+class OrderViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
+    filter_backends = [
+        IsOwnerOrAdminFilterBackend,
+    ]
 
     class CustomMeta:
         base_url = "orders"
@@ -18,7 +21,15 @@ class OrderViewSet(viewsets.GenericViewSet):
     def get_base_url(self):
         return self.CustomMeta.base_url
 
-    @action(methods=["post", "get"], detail=False, url_name="start", url_path="start")
+    @action(
+        methods=["post", "get"],
+        permission_classes=[
+            permissions.AllowAny,
+        ],
+        detail=False,
+        url_name="start",
+        url_path="start",
+    )
     def start_order(self, request, format=["JSON"]):
 
         if not isinstance(request.user, AnonymousUser):
@@ -33,23 +44,3 @@ class OrderViewSet(viewsets.GenericViewSet):
 
         serializer.save()
         return response.Response(serializer.data, status=status.HTTP_201_CREATED)
-
-    def list(
-        self,
-        request,
-        format=["JSON"],
-        permission_classes=[
-            IsOwnerOrAdmin,
-        ],
-        *args,
-        **kwargs
-    ):
-        queryset = self.filter_queryset(self.get_queryset())
-
-        page = self.paginate_queryset(queryset)
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
-
-        serializer = self.get_serializer(queryset, many=True)
-        return response.Response(serializer.data)

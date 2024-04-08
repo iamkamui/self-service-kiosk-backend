@@ -8,10 +8,15 @@ from core.models import Profile, User
 
 
 class BaseTestAPI(APITestCase):
+    """
+    The BaseTestAPi provides a way to create test users and get authentication headers.
+    By default it creates a test user without a admin permission.
+    """
 
     @classmethod
     def setUpTestData(cls) -> None:
         cls.start_order_endpoint = reverse("api:orders-start")
+        cls.list_order_endpoint = reverse("api:orders-list")
         cls.create_or_list_products_endpoint = reverse("api:products-list")
         cls.user = cls.create_test_user()
 
@@ -22,9 +27,14 @@ class BaseTestAPI(APITestCase):
         email: str = "test_user@selfservicekiosk.com",
         first_name: str = "User",
         last_name: str = "Test",
+        is_superuser: bool = False,
     ) -> User:
         user = User(
-            username=username, email=email, first_name=first_name, last_name=last_name
+            username=username,
+            email=email,
+            first_name=first_name,
+            last_name=last_name,
+            is_superuser=is_superuser,
         )
         user.set_password("Testuserp@ssword")
         user.save()

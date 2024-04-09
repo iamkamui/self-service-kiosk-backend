@@ -16,7 +16,7 @@ class Category(BaseModel):
 
 class SubCategory(BaseModel):
     name = models.CharField("product category", max_length=150)
-    category_id = models.ForeignKey(
+    category = models.ForeignKey(
         Category, verbose_name="category", on_delete=models.DO_NOTHING, null=True
     )
 

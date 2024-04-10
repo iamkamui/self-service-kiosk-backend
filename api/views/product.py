@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 
 from api.models import Product
-from api.permissions import IsAdminOrReadOnly
 from api.serializers import ProductSerializer
+from core.permissions import IsAdminOrReadOnly
 
 
 class ProductViewSet(viewsets.ModelViewSet):

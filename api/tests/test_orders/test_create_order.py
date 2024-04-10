@@ -4,7 +4,7 @@ from api.utils.choices import OrderConsumptionChoices
 from core.tests import BaseTestAPI
 
 
-class TestOrderAPI(BaseTestAPI):
+class TestCreateOrderAPI(BaseTestAPI):
     def test_create_order_with_anonymous_user(self):
         data = {"consumption": OrderConsumptionChoices.TAKE_HOME}
         response = self.client.post(self.start_order_endpoint, data=data, format="json")

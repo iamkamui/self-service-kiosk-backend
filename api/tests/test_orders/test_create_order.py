@@ -21,7 +21,7 @@ class TestCreateOrderAPI(BaseTestAPI):
         self.assertEqual(response.status_code, 201)
         self.assertEqual(response.json()["products"]["products"], [])
         self.assertEqual(response.json()["user"], self.user.id)
-    
+
     def test_create_order_without_consumption_option_raise_400(self):
         response = self.client.post(self.start_order_endpoint, format="json")
         self.assertEqual(response.status_code, 400)

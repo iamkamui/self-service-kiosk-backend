@@ -32,6 +32,9 @@ class OrderSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data: dict) -> Order:
         order_products = OrderProducts.objects.create()
+
+        validated_data["session"] = self.context.get("session", None)
+
         try:
             order = Order.objects.create(products=order_products, **validated_data)
         except TypeError as error:

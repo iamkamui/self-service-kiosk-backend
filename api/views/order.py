@@ -1,4 +1,5 @@
 from django.contrib.auth.models import AnonymousUser
+from django.contrib.sessions.models import Session
 from rest_framework import mixins, permissions, response, status, viewsets
 from rest_framework.decorators import action
 
@@ -32,10 +33,15 @@ class OrderViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
     )
     def start_order(self, request, format=["JSON"]):
 
+        request.session.save()
+
         if not isinstance(request.user, AnonymousUser):
             request.data["user"] = request.user.id
 
-        serializer = self.get_serializer(data=request.data)
+        session = Session.objects.get(pk=request.session.session_key)
+        serializer = self.get_serializer(
+            data=request.data, context={"session": session}
+        )
 
         if not serializer.is_valid():
             return response.Response(

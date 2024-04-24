@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
-from decouple import config
+from decouple import config as env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,30 +22,35 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config("SECRET_KEY", cast=str)
+SECRET_KEY = env("SECRET_KEY", cast=str)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DEBUG", default=False, cast=bool)
+DEBUG = env("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+]
+
+THIRD_PARTY_APPS = [
     "rest_framework",
     "rest_framework_simplejwt",
     "django_extensions",
     "phonenumber_field",
-    "core",
-    "api",
 ]
+
+LOCAL_APPS = ["core", "api"]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -84,11 +89,11 @@ WSGI_APPLICATION = "selfservicekiosk.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": config("POSTGRES_DB", cast=str),
-        "USER": config("POSTGRES_USER", cast=str),
-        "PASSWORD": config("POSTGRES_PASSWORD", cast=str),
-        "HOST": config("POSTGRES_HOST", cast=str),
-        "PORT": config("POSTGRES_PORT", cast=int),
+        "NAME": env("POSTGRES_DB", cast=str),
+        "USER": env("POSTGRES_USER", cast=str),
+        "PASSWORD": env("POSTGRES_PASSWORD", cast=str),
+        "HOST": env("POSTGRES_HOST", cast=str),
+        "PORT": env("POSTGRES_PORT", cast=int),
     }
 }
 

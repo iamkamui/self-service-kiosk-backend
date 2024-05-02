@@ -21,6 +21,7 @@ class Order(BaseModel):
     user = models.ForeignKey(
         User, verbose_name="user id", on_delete=models.CASCADE, null=True
     )
+    session = models.CharField("session key", max_length=40, null=True)
     products = models.OneToOneField(
         OrderProducts, verbose_name="order products", on_delete=models.CASCADE
     )

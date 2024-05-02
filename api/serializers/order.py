@@ -25,13 +25,16 @@ class OrderSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Order
-        fields = "__all__"
+        fields = ["user", "products", "number", "consumption"]
 
     def get_order_number(self, obj: Order):
         return obj.number
 
     def create(self, validated_data: dict) -> Order:
         order_products = OrderProducts.objects.create()
+
+        validated_data["session"] = self.context.get("session", None)
+
         try:
             order = Order.objects.create(products=order_products, **validated_data)
         except TypeError as error:

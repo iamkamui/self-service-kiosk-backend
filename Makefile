@@ -21,3 +21,7 @@ superuser:
 .PHONY: test
 test:
 	docker compose run --rm django python manage.py test $(path) --keepdb
+
+.PHONY: shell_plus
+shell_plus:
+	docker compose run --rm django python manage.py shell_plus

@@ -15,7 +15,7 @@ class TestListOrderAPI(BaseTestAPI):
         self.user_2_headers = self.get_authentication_header(self.user_2)
         self.__create_setup_orders()
 
-    def __create_setup_orders(self, qt: int = 6):
+    def __create_setup_orders(self, qt: int = 9):
         payload = {
             "data": {"consumption": OrderConsumptionChoices.TAKE_HOME},
             "format": "json",
@@ -24,13 +24,17 @@ class TestListOrderAPI(BaseTestAPI):
         initial_orders = Order.objects.count()
         payload["headers"] = self.user_headers
 
-        for _ in range(int(qt / 2)):
+        for _ in range(int(qt / 3)):
             response = self.client.post(self.start_order_endpoint, **payload)  # noqa
 
         payload["headers"] = self.user_2_headers
 
-        for _ in range(int(qt / 2)):
+        for _ in range(int(qt / 3)):
             response2 = self.client.post(self.start_order_endpoint, **payload)  # noqa
+
+        payload.pop("headers")
+        for _ in range(int(qt / 3)):
+            response3 = self.client.post(self.start_order_endpoint, **payload)  # noqa
 
         total_orders = Order.objects.count()
 

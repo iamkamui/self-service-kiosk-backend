@@ -16,6 +16,7 @@ class OrderViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
 
     class CustomMeta:
         base_url = "orders"
+        order_by = "-created_at"
 
     @classmethod
     def get_base_url(self):

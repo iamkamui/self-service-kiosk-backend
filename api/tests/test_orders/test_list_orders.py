@@ -1,4 +1,5 @@
 import ipdb  # noqa
+from rest_framework.test import APIClient
 
 from api.models import Order
 from api.utils.choices import OrderConsumptionChoices
@@ -56,4 +57,22 @@ class TestListOrderAPI(BaseTestAPI):
         self.assertEqual(total_user1_orders, len(response.json()))
 
     def test_list_order_with_anonymous_user_return_only_own_orders_by_session(self):
-        pass
+        total_orders = Order.objects.count()
+        client = APIClient()
+
+        response = client.get(self.list_order_endpoint, format="json")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 0)
+        self.assertLess(len(response.json()), total_orders)
+
+        creation_response = client.post(
+            self.start_order_endpoint,
+            data={"consumption": OrderConsumptionChoices.TAKE_HOME},
+            format="json",
+        )
+
+        self.assertEqual(creation_response.status_code, 201)
+
+        response2 = client.get(self.list_order_endpoint, format="json")
+        self.assertEqual(response2.status_code, 200)
+        self.assertEqual(len(response2.json()), 1)

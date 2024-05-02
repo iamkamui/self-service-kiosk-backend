@@ -11,6 +11,6 @@ class IsOwnerOrAdminFilterBackend(filters.BaseFilterBackend):
             return queryset.filter(user=request.user)
 
         if isinstance(request.user, AnonymousUser):
-            return queryset.filter(user__isnull=True)
-            # TODO: Implement the logic for identify order from anonymous user
+            session_key = request.session.session_key
+            return queryset.filter(user__isnull=True, session=session_key)
         return queryset

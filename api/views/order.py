@@ -35,7 +35,10 @@ class OrderViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
         if not isinstance(request.user, AnonymousUser):
             request.data["user"] = request.user.id
 
-        serializer = self.get_serializer(data=request.data)
+        session = request.session.session_key
+        serializer = self.get_serializer(
+            data=request.data, context={"session": session}
+        )
 
         if not serializer.is_valid():
             return response.Response(

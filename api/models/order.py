@@ -1,4 +1,3 @@
-from django.contrib.sessions.models import Session
 from django.db import models, transaction
 from django.utils import timezone
 
@@ -22,9 +21,7 @@ class Order(BaseModel):
     user = models.ForeignKey(
         User, verbose_name="user id", on_delete=models.CASCADE, null=True
     )
-    session = models.ForeignKey(
-        Session, verbose_name="session key", null=True, on_delete=models.DO_NOTHING
-    )
+    session = models.CharField("session key", max_length=40, null=True)
     products = models.OneToOneField(
         OrderProducts, verbose_name="order products", on_delete=models.CASCADE
     )
